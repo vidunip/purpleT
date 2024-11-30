@@ -1,0 +1,537 @@
+/*------------------------------------------------General--------------------------------------------------------------------------------*/
+*{
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(to right, #1b0051, #150037);
+    /* background-image: url('../Images/bg.jpeg'); */
+    background-size: cover; /* Makes the image cover the entire screen */    
+    background-repeat: repeat; /* Prevents the image from repeating */
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/*------------------------------------------------Nav--------------------------------------------------------------------------------*/
+
+.topbar img /*For the logo*/{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 50px;
+    justify-content: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.topbar img:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.2);
+}
+
+.navbar{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin-right: 50px;
+}
+
+.navbar ul li a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    position: relative; 
+    transition: 0.25s;
+    font-family: 'AestheticRomance', serif;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    width: 0%; 
+    height: 3px;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.triangle{
+    font-size: 15px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3b00afed;
+    min-width: 120px;
+    box-shadow: 0 4px 8px #00000033;
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1001;
+    margin-top: 5px;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+
+    li{
+        display: block;
+        float: none !important;
+        margin: 0 !important;
+        padding: 0;
+        width: 100%;
+
+        a{
+            display: block;
+            padding: 8px 16px;
+            font-size: 20px !important;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            float: none !important;
+            position: relative;
+            transition: color 0.25s;
+        }
+
+        a::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 0.5px;
+            background-color: white;
+            transition: width 0.4s ease;
+        }
+
+        a:hover::after{
+            width: 40% !important;
+        }
+    }
+}
+
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation{
+    background: #3b00af;
+    border-radius: 50px;
+    margin: 20px;
+    padding: 1px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.topbar img /*For the logo*/{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 50px;
+    justify-content: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.topbar img:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.2);
+}
+
+@media (max-width: 768px) { 
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) { 
+    .navbar ul {
+        gap: 10px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1100px) { /*Making the navigation bar mobile responsive*/
+    .topbar img {
+        width: 30px;
+        height: 30px;
+        margin-left: 20px;
+        margin-right: 2px;
+    }
+
+    .triangle {
+        display: none;
+    }
+
+    .navbar ul {
+        display: inline-flex; /* Makes list items appear side by side */
+        align-self: center;
+        float: none;
+        margin-left: 1px;
+
+        li a{
+            margin-right: 0px;
+            font-size: 25px;
+        }
+    }
+}
+
+/*------------------------------------------------Sections--------------------------------------------------------------------------------*/
+
+section {
+    margin-top: 100px;    
+    color: white;
+    font-family: 'SanFrancisco';
+    h1{
+        font-size: 50px;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 40px;
+    }
+
+    h3{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 20px;
+        margin-left: 200px;
+        margin-right: 200px;
+        text-align: center;
+    }
+}
+
+.contact p{
+    text-align: left;
+}
+
+.panels {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.panel {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(59, 0, 175, 0.3);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(59, 0, 175, 0.5);
+    transition: all 0.3s ease;
+}
+
+.panel:hover {
+    transform: translateY(-10px);
+}
+
+.panel:hover::before {
+    background: rgba(59, 0, 175, 0.8);
+}
+
+.panel-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.panel h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+@media (max-width: 1000px) {
+    .panels {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .panel {
+        width: 90%;
+        max-width: 400px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) { 
+    .panel {
+        height: 150px;
+    }
+
+    .panel h2 {
+        font-size: 24px;
+    }
+}
+
+.portfolio-grid {
+    columns: 3;
+    column-gap: 50px;
+    padding: 70px;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    line-height: 0;
+    margin-bottom: 50px;
+    break-inside: avoid;
+    transform: scale(0.92);
+}
+
+.portfolio-item:hover {
+    transform: scale(0.94);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(59, 0, 175, 0.9);
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    line-height: normal;
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.portfolio-item h3 {
+    color: white;
+    margin: 0;
+    font-family: 'SanFrancisco', serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (max-width: 1200px) { 
+    .portfolio-grid {
+        columns: 2;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .portfolio-grid {
+        columns: 1;
+        padding: 20px;
+    }
+
+    .portfolio-item {
+        margin-bottom: 30px;
+    }
+
+    .portfolio-item h3 {
+        font-size: 18px;
+    }
+}
+
+/*------------------------------------------------Footer--------------------------------------------------------------------------------*/
+
+footer {
+    margin-top: 0px;
+    background-color: #3b00af;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0 50px;
+    font-family: 'AestheticRomance', serif;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-family: 'AestheticRomance', serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info .separator {
+    color: white;
+    font-size: 20px;
+}
+
+.contact-info a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-info a:hover {
+    transform: scale(1.05);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links i {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) { 
+    footer {
+        padding: 15px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 20px;
+    }
+
+    .contact-info {
+        font-size: 14px;
+    }
+}
+
+/*------------------------------------------------Fonts--------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'AestheticRomance';
+    src: url('../Fonts/AestheticRomance.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* src: url('https://<your-username>.github.io/<repository-name>/Fonts/AestheticRomance.ttf');*/
+}
+
+@font-face {
+    font-family: 'SanFrancisco';
+    src: url('../Fonts/SanFrancisco.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* src: url('https://<your-username>.github.io/<repository-name>/Fonts/SanFrancisco.ttf');*/
+}
+
+@media (max-width: 768px) { 
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+}
